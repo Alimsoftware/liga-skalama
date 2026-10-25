@@ -11,18 +11,10 @@ Requer Node.js 20.9 ou superior. No diretório do projeto, execute `pnpm install
 1. Crie um projeto Supabase.
 2. Abra o SQL Editor e execute o conteúdo atualizado de `schema.sql`.
 3. Em Project Settings / API, copie a Project URL e a chave pública `anon`/publishable (nunca use `service_role` no site).
-4. Preencha esses dois valores em `public/config.js`:
+4. Localmente: copie `.env.example` para `.env.local` e preencha `NEXT_PUBLIC_SUPABASE_URL` e `NEXT_PUBLIC_SUPABASE_ANON_KEY`. Reinicie o `pnpm dev`.
+5. No GitHub: em **Settings → Secrets and variables → Actions → Variables**, crie as mesmas duas variáveis. O workflow `pages.yml` as usa no build.
 
-```js
-window.LIGA_CONFIG = {
-  supabaseUrl: "https://SEU-PROJETO.supabase.co",
-  supabaseAnonKey: "SUA_CHAVE_PUBLICA"
-};
-```
-
-5. Publique a pasta `liga-skalama` como site HTTPS. Para GitHub Pages, coloque seu conteúdo na raiz de um repositório exclusivo e habilite Pages.
-
-O site publicado deve ser público para leitura. Somente contas autenticadas e cadastradas pelo administrador em `league_admins` podem editar; as permissões são aplicadas pelo RLS no banco e também pela interface. Não compartilhe a chave `service_role`. Use somente a chave pública anon/publishable no `public/config.js`.
+Sem essas variáveis o site abre em modo somente leitura, aguardando o banco compartilhado. O site publicado deve ser público para leitura. Somente contas autenticadas e cadastradas pelo administrador em `league_admins` podem editar; as permissões são aplicadas pelo RLS no banco e também pela interface. Use somente a chave pública anon/publishable; nunca a `service_role`.
 
 ## Organização dos jogos
 
@@ -67,7 +59,7 @@ O projeto usa Supabase para mostrar o mesmo conteúdo para todas as pessoas. Sem
 
 1. Crie um projeto no Supabase e abra o **SQL Editor**.
 2. Execute o arquivo `schema.sql`. As políticas liberam leitura pública e exigem uma conta cadastrada em `league_admins` para qualquer escrita.
-3. Preencha `public/config.js` com a Project URL e a chave pública anon/publishable. Essa chave é pública por definição; a segurança vem das políticas RLS do banco. Nunca publique uma chave `service_role`.
+3. Configure `NEXT_PUBLIC_SUPABASE_URL` e `NEXT_PUBLIC_SUPABASE_ANON_KEY` (veja acima) com a Project URL e a chave pública anon/publishable. Essa chave é pública por definição; a segurança vem das políticas RLS do banco. Nunca publique uma chave `service_role`.
 4. Em **Authentication → URL Configuration**, adicione o endereço final do GitHub Pages à lista de URLs autorizadas.
 5. Publique a pasta em um repositório GitHub próprio e ative GitHub Pages usando o workflow `pages.yml`.
 6. Abra o site, escolha **Entrar como organizador** e solicite um link mágico para seu e-mail. Depois de entrar uma vez, adicione sua conta como administradora no SQL Editor:
