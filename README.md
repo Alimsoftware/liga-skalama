@@ -4,14 +4,14 @@ Site responsivo para organizar a noite de futsal: lista individual de 20 jogador
 
 ## Rodar localmente
 
-Abra `index.html` no navegador. Sem configuração Supabase, o site guarda os dados apenas nesse navegador. Para sincronizar os participantes, publique em HTTPS e conecte um projeto Supabase.
+Requer Node.js 20.9 ou superior. No diretório do projeto, execute `pnpm install` e `pnpm dev`; abra `http://localhost:3000/liga-skalama/`. Para gerar a versão estática, execute `pnpm build`; os arquivos prontos para publicação ficam em `out/`. O GitHub Actions publica essa pasta no GitHub Pages.
 
 ## Ativar sincronização compartilhada
 
 1. Crie um projeto Supabase.
 2. Abra o SQL Editor e execute o conteúdo atualizado de `schema.sql`.
 3. Em Project Settings / API, copie a Project URL e a chave pública `anon`/publishable (nunca use `service_role` no site).
-4. Preencha esses dois valores em `config.js`:
+4. Preencha esses dois valores em `public/config.js`:
 
 ```js
 window.LIGA_CONFIG = {
@@ -22,7 +22,7 @@ window.LIGA_CONFIG = {
 
 5. Publique a pasta `liga-skalama` como site HTTPS. Para GitHub Pages, coloque seu conteúdo na raiz de um repositório exclusivo e habilite Pages.
 
-O site publicado deve ser público para leitura. Somente contas autenticadas e cadastradas pelo administrador em `league_admins` podem editar; as permissões são aplicadas pelo RLS no banco e também pela interface. Não compartilhe a chave `service_role`. Use somente a chave pública anon/publishable no `config.js`.
+O site publicado deve ser público para leitura. Somente contas autenticadas e cadastradas pelo administrador em `league_admins` podem editar; as permissões são aplicadas pelo RLS no banco e também pela interface. Não compartilhe a chave `service_role`. Use somente a chave pública anon/publishable no `public/config.js`.
 
 ## Organização dos jogos
 
@@ -67,7 +67,7 @@ O projeto usa Supabase para mostrar o mesmo conteúdo para todas as pessoas. Sem
 
 1. Crie um projeto no Supabase e abra o **SQL Editor**.
 2. Execute o arquivo `schema.sql`. As políticas liberam leitura pública e exigem uma conta cadastrada em `league_admins` para qualquer escrita.
-3. Preencha `config.js` com a Project URL e a chave pública anon/publishable. Essa chave é pública por definição; a segurança vem das políticas RLS do banco. Nunca publique uma chave `service_role`.
+3. Preencha `public/config.js` com a Project URL e a chave pública anon/publishable. Essa chave é pública por definição; a segurança vem das políticas RLS do banco. Nunca publique uma chave `service_role`.
 4. Em **Authentication → URL Configuration**, adicione o endereço final do GitHub Pages à lista de URLs autorizadas.
 5. Publique a pasta em um repositório GitHub próprio e ative GitHub Pages usando o workflow `pages.yml`.
 6. Abra o site, escolha **Entrar como organizador** e solicite um link mágico para seu e-mail. Depois de entrar uma vez, adicione sua conta como administradora no SQL Editor:
@@ -81,3 +81,6 @@ on conflict (user_id) do nothing;
 7. Atualize o site. A conta cadastrada verá a opção de edição; demais visitantes verão o conteúdo em modo somente leitura. Para remover o acesso, exclua a linha correspondente de `league_admins`.
 
 A primeira conta autorizada precisa executar a consulta acima no Supabase. A conta comum não consegue conceder privilégios a si mesma. A identidade do administrador é definida no banco, e não pelo botão ou por uma configuração no navegador.
+
+
+
