@@ -49,7 +49,7 @@
     button.hidden=false;label.hidden=false;
     label.textContent=canManageShared?"Edição autorizada":"Visualização pública";
     button.textContent=adminSession?"Sair do modo organizador":"Entrar como organizador";
-    setConnection(canManageShared?"Ao vivo · organizador":"Ao vivo · somente leitura",true);
+    setConnection(canManageShared?"Banco online · organizador":"Banco online · leitura pública",true);
   }
   function applyEditLock() {
     const locked=(shared&&!canManageShared)||(!shared&&window.LIGA_CONFIG?.publicReadOnly===true);document.body.classList.toggle("public-read-only",locked);
@@ -132,7 +132,7 @@
     else if(canManageShared){const starter=initialState();const {error:insertError}=await client.from("league_night").insert({id:1,state:starter});if(insertError&&insertError.code!=="23505")throw insertError;const result=await client.from("league_night").select("state").eq("id",1).single();if(result.error)throw result.error;state=normalizeState(result.data.state);}
     else throw new Error("O banco ainda não foi inicializado. O administrador precisa configurar o registro inicial.");
     client.auth.onAuthStateChange((_event,session)=>{setTimeout(()=>refreshAdminAccess(session).catch(error=>{canManageShared=false;notify("Não foi possível validar o acesso de edição: "+error.message,true);renderAll();}),0);});
-    updateAccessUI();setConnection(canManageShared?"Ao vivo · organizador":"Ao vivo · somente leitura",true);
+    updateAccessUI();setConnection(canManageShared?"Banco online · organizador":"Banco online · leitura pública",true);
     await refreshGoals();
     client.channel("liga-skalama-live")
       .on("postgres_changes", { event: "*", schema: "public", table: "league_night" }, payload => { if (payload.new?.state) { state = normalizeState(payload.new.state); renderAll(); } })
