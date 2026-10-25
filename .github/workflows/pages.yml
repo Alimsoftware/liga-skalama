@@ -32,6 +32,9 @@ jobs:
         run: pnpm install --frozen-lockfile
       - name: Gerar o site Next.js
         run: pnpm build
+        env:
+          NEXT_PUBLIC_SUPABASE_URL: ${{ vars.NEXT_PUBLIC_SUPABASE_URL }}
+          NEXT_PUBLIC_SUPABASE_ANON_KEY: ${{ vars.NEXT_PUBLIC_SUPABASE_ANON_KEY }}
       - name: Preservar os arquivos estáticos do Next
         run: touch out/.nojekyll
       - name: Preparar GitHub Pages

@@ -147,8 +147,8 @@
     select.disabled = names.length === 0;
   }
   function lineupForTeam(teamName,game=null) {
-    if(game?.home===teamName)return game.homePlayers||state.teams?.find(team=>team.name===teamName)?.players||[];
-    if(game?.away===teamName)return game.awayPlayers||state.teams?.find(team=>team.name===teamName)?.players||[];
+    if(game&&game.home===teamName)return game.homePlayers||state.teams?.find(team=>team.name===teamName)?.players||[];
+    if(game&&game.away===teamName)return game.awayPlayers||state.teams?.find(team=>team.name===teamName)?.players||[];
     return state.lineups?.[teamName]||state.teams?.find(team=>team.name===teamName)?.players||[];
   }
   function teamForPlayer(player) {
