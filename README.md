@@ -11,7 +11,7 @@ Requer Node.js 20.9 ou superior. No diretório do projeto, execute `pnpm install
 1. Crie um projeto Supabase.
 2. Abra o SQL Editor e execute o conteúdo atualizado de `schema.sql`.
 3. Em Project Settings / API, copie a Project URL e a chave pública `anon`/publishable (nunca use `service_role` no site).
-4. Localmente: copie `.env.example` para `.env.local` e preencha `NEXT_PUBLIC_SUPABASE_URL` e `NEXT_PUBLIC_SUPABASE_ANON_KEY`. Reinicie o `pnpm dev`.
+4. Localmente: crie um arquivo `.env.local` com `NEXT_PUBLIC_SUPABASE_URL=...` e `NEXT_PUBLIC_SUPABASE_ANON_KEY=...` (uma por linha). Reinicie o `pnpm dev`.
 5. No GitHub: em **Settings → Secrets and variables → Actions → Variables**, crie as mesmas duas variáveis. O workflow `pages.yml` as usa no build.
 
 Sem essas variáveis o site abre em modo somente leitura, aguardando o banco compartilhado. O site publicado deve ser público para leitura. Somente contas autenticadas e cadastradas pelo administrador em `league_admins` podem editar; as permissões são aplicadas pelo RLS no banco e também pela interface. Use somente a chave pública anon/publishable; nunca a `service_role`.
