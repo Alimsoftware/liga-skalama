@@ -30,7 +30,7 @@ O primeiro jogo é **Time Águia × Time Sol**. O vencedor segue contra **Verde*
 
 Cada gol fica ligado à partida, com autor e minuto registrados. O placar separa o time do autor do time que recebe o ponto em um gol contra. O score de jogadores e goleiros é calculado automaticamente após cada partida; os rankings mostram as médias individuais e os gols sofridos por goleiro.
 
-O botão **Fundo claro** alterna entre o tema claro e o tema escuro padrão. A escolha fica salva no dispositivo.
+O site abre com o fundo claro. O botão **Fundo escuro** ativa o tema escuro alternativo. A escolha fica salva no dispositivo.
 
 ## Regras e punições
 
