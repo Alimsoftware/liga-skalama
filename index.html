@@ -2,15 +2,15 @@
 <html lang="pt-BR">
 <head>
   <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="theme-color" content="#111111"><meta name="description" content="Organização da noite de futebol da LIGA SKALAMA.">
+  <meta name="theme-color" content="#f4f4f1"><meta name="description" content="Organização da noite de futebol da LIGA SKALAMA.">
   <title>LIGA SKALAMA — Noite de Fut</title><link rel="icon" href="./assets/escudo-skalama-oficial.png"><link rel="stylesheet" href="./styles.css">
 </head>
-<body>
+<body class="light-theme">
   <header class="site-header"><div class="brand-lockup"><img src="./assets/escudo-skalama-oficial.png" alt="Escudo da Skalama" class="crest"><div><p class="eyebrow">FUTEBOL · AMIZADE · COMPETIÇÃO</p><h1>LIGA <span>SKALAMA</span></h1></div></div><div class="header-actions"><div class="live-pill"><i></i><span id="connectionLabel">Conectando</span></div><div class="access-tools"><span id="accessLabel" hidden></span><button id="adminAccessButton" class="button button-outline" type="button" hidden>Entrar como organizador</button></div></div></header>
   <main class="page-shell">
     <section class="hero panel" data-view="home"><div><p class="eyebrow">DIA DE FUT</p><h2>LIGA <span>SKALAMA</span></h2><p class="hero-copy">Organize a lista, sorteie os times e acompanhe cada partida.</p></div><div class="session-chip"><strong>20+</strong><span>TITULARES E RESERVAS<br>ATÉ 8 NO MODO COCA</span></div></section>
     <div id="modeNotice" class="notice hidden"></div><div id="toast" class="toast" role="status" aria-live="polite"></div>
-    <nav class="view-tabs" aria-label="Seções do site"><button data-view-button="home">Tela principal</button><button data-view-button="elenco">Elenco e sorteio</button><button data-view-button="live">Jogos ao vivo</button><button data-view-button="history">Histórico</button><button id="themeToggle" class="theme-toggle" type="button">Fundo claro</button></nav>
+    <nav class="view-tabs" aria-label="Seções do site"><button data-view-button="home">Tela principal</button><button data-view-button="elenco">Elenco e sorteio</button><button data-view-button="live">Jogos ao vivo</button><button data-view-button="history">Histórico</button><button id="themeToggle" class="theme-toggle" type="button">Fundo escuro</button></nav>
     <nav class="home-shortcuts" data-view="home" aria-label="Atalhos da temporada"><a href="#historico" data-shortcut="history">Histórico de partidas <span>↗</span></a><a href="#estatisticas" data-shortcut="history">Estatísticas individuais <span>↗</span></a><a href="#publicacoes-semanais" data-shortcut="home">Publicações semanais <span>↗</span></a></nav>
     <section class="panel season-highlights" data-view="home" aria-labelledby="seasonTitle"><div class="section-heading"><div><p class="eyebrow">DESEMPENHO DO MÊS</p><h2 id="seasonTitle">Destaques da temporada</h2><p id="seasonMonth" class="help-text"></p></div><span class="season-badge">ATUALIZAÇÃO MENSAL</span></div><div id="seasonHighlights" class="season-highlight-grid"><p class="empty-state">Os destaques serão calculados após as partidas.</p></div></section>    <section class="setup-grid" data-view="elenco">
       <article class="panel setup-card"><div class="section-heading"><div><p class="eyebrow">PREPARE A RODADA</p><h2>Dados do jogo</h2></div><span class="step">01</span></div>
@@ -47,7 +47,7 @@
     <section class="panel weekly-publications" id="publicacoes-semanais" data-view="home"><div class="section-heading"><div><p class="eyebrow">RESUMO REAL DAS PARTIDAS</p><h2>Publicações semanais</h2></div><span class="step">09</span></div><div id="weeklyPublications" class="weekly-publication-list"><p class="empty-state">Os resumos semanais aparecerão após os jogos.</p></div></section>
     <section class="panel individual-stats" id="estatisticas" data-view="history"><div class="section-heading"><div><p class="eyebrow">DESEMPENHO ACUMULADO</p><h2>Estatísticas individuais</h2></div><span class="step">10</span></div><div class="table-scroll"><div id="individualStats" class="individual-stats-list"><p class="empty-state">As estatísticas aparecem após as partidas.</p></div></div></section>    <section class="panel history-section" id="historico" data-view="history"><div class="section-heading"><div><p class="eyebrow">REGISTRO DA NOITE</p><h2>Histórico de jogos</h2></div><span class="step">08</span></div><div id="gameHistory" class="game-history"><p class="empty-state">Nenhum jogo encerrado ainda.</p></div></section>    <footer class="site-footer"><span>LIGA SKALAMA</span><span>SEGUNDA-FEIRA · QUADRA DO JEMB</span></footer>
   </main>
-  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script><script src="./config.js"></script><script src="./app.js?v=20261025-3"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script><script src="./config.js"></script><script src="./app.js?v=20261025-4"></script>
 </body>
 </html>
 
