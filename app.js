@@ -473,7 +473,7 @@
         showMode(publicOnly?"Site publicado em modo somente leitura. O organizador ainda precisa conectar o banco compartilhado.":"Não foi possível conectar ao Supabase. Confira a configuração; os dados locais ficam somente neste navegador.",!publicOnly);
         console.error(error);
       }
-    renderAll(); setView(localStorage.getItem("liga-skalama-view") || "home"); setTheme(localStorage.getItem("liga-skalama-theme") || "dark"); setInterval(() => { renderTimer(); renderIncidents(); }, 250); setInterval(() => { renderSeasonHighlights(); }, 30000);
+    renderAll(); setView(localStorage.getItem("liga-skalama-view") || "home"); setTheme(localStorage.getItem("liga-skalama-theme") || "light"); setInterval(() => { renderTimer(); renderIncidents(); }, 250); setInterval(() => { renderSeasonHighlights(); }, 30000);
   }
   boot();
 })();
