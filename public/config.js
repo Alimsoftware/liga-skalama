@@ -1,7 +1,7 @@
-// Insira aqui a URL e a chave pública do novo projeto Supabase.
-// Não use uma chave secreta/service_role no navegador.
+// Chave publishable: pode ser usada no navegador; nunca coloque service_role aqui.
 window.LIGA_CONFIG = {
-  supabaseUrl: '',
-  supabaseAnonKey: '',
+  supabaseUrl: 'https://lqmcmxjjvnlbjnwadzex.supabase.co',
+  supabaseAnonKey: 'sb_publishable_-auLy0FBPx37aj2fkgtnjQ_3NCiwmDM',
   publicReadOnly: true,
 };
+
