@@ -54,7 +54,7 @@
   function applyEditLock() {
     const locked=(shared&&!canManageShared)||(!shared&&window.LIGA_CONFIG?.publicReadOnly===true);document.body.classList.toggle("public-read-only",locked);
     document.querySelectorAll("button,input,select,textarea").forEach(element=>{
-      if(element.id==="themeToggle"||element.id==="adminAccessButton"||element.hasAttribute("data-view-button"))return;
+      if(element.id==="themeToggle"||element.id==="adminAccessButton"||element.closest("#adminLogin")||element.hasAttribute("data-view-button"))return;
       if(locked){if(!element.hasAttribute("data-access-locked")){element.dataset.accessWasDisabled=String(element.disabled);element.setAttribute("data-access-locked","");}element.disabled=true;}
       else if(element.hasAttribute("data-access-locked")){delete element.dataset.accessWasDisabled;element.removeAttribute("data-access-locked");}
     });
@@ -69,9 +69,10 @@
   async function requestAdminAccess() {
     if(!shared||!client?.auth){notify("O acesso do organizador só funciona depois de configurar o banco online.",true);return;}
     if(adminSession){const {error}=await client.auth.signOut();if(error){notify("Não foi possível sair: "+error.message,true);return;}adminSession=null;canManageShared=false;renderAll();notify("Você saiu do modo organizador.");return;}
-    const email=prompt("Digite o e-mail autorizado do organizador para receber o link de acesso:");if(!email)return;
-    const {error}=await client.auth.signInWithOtp({email:email.trim(),options:{emailRedirectTo:window.location.origin+window.location.pathname}});
-    if(error){notify("Não foi possível enviar o link: "+error.message,true);return;}notify("Enviamos um link de acesso ao e-mail informado. Só a conta autorizada poderá editar.");
+    const dialog=$("adminLogin"),password=$("adminPassword");password.value="";dialog.returnValue="";dialog.showModal();
+    if(await new Promise(resolve=>dialog.addEventListener("close",()=>resolve(dialog.returnValue),{once:true}))!=="ok")return;
+    const {error}=await client.auth.signInWithPassword({email:$("adminEmail").value.trim(),password:password.value});password.value="";
+    if(error){notify("Não foi possível entrar: "+(error.message==="Invalid login credentials"?"e-mail ou senha incorretos.":error.message),true);return;}notify("Acesso feito. Só contas autorizadas podem editar.");
   }
   function localLoad() {
     try { const saved = JSON.parse(localStorage.getItem("liga-skalama-local") || "null"); return saved?.state ? saved : { state: initialState(), goals: [], votes: [] }; }

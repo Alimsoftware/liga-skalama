@@ -135,3 +135,5 @@ body.light-theme .season-highlight-card,body.light-theme .weekly-publication,bod
 
 .header-actions{display:flex;align-items:center;gap:14px}.access-tools{display:flex;align-items:center;gap:8px}.access-tools span{color:var(--muted);font-size:10px;font-weight:800}.access-tools .button{padding:8px 11px;font-size:10px}body.public-read-only .button:disabled,body.public-read-only input:disabled,body.public-read-only select:disabled,body.public-read-only textarea:disabled{cursor:not-allowed;opacity:.56}@media(max-width:620px){.site-header{height:auto;min-height:76px;padding:10px 15px;gap:10px}.header-actions{align-items:flex-end;flex-direction:column;gap:5px}.access-tools{align-items:flex-end;flex-direction:column;gap:3px}.access-tools span{font-size:9px}.access-tools .button{padding:6px 8px;font-size:9px}}
 .access-tools [hidden]{display:none!important}
+.login-dialog{border:1px solid var(--line);border-radius:var(--radius);background:var(--panel);color:var(--ink);padding:20px;width:min(360px,calc(100vw - 32px))}
+.login-dialog::backdrop{background:rgba(0,0,0,.45)}
