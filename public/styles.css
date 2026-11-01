@@ -194,114 +194,125 @@ body.light-theme .live-team-picker label,body.light-theme .action-dialog label{c
 .match-lineup-preview>.match-preview-team ul{color:var(--team-ink);opacity:.94}
 .match-lineup-preview>.match-preview-team li{border-color:color-mix(in srgb,var(--team-ink) 22%,transparent)}
 
-
-/* Jogos ao vivo: mesa de organização, placar e controles rápidos. */
-body.live-view-active .site-header{display:none}
-body.live-view-active .page-shell{max-width:1100px;padding-top:20px}
-.live-section{margin:0}
-.live-section .match-card{max-width:1040px;margin:0 auto;padding:0;background:transparent;border:0;border-radius:0;box-shadow:none}
-.live-preparation{margin:0;border:1px solid #d8d9df;border-radius:14px;background:#f8f9fb;color:#171820;box-shadow:0 12px 30px #0004;overflow:hidden}
-.live-preparation>summary{display:flex;align-items:center;gap:13px;cursor:pointer;list-style:none;padding:17px 20px;background:#fff}
-.live-preparation>summary::-webkit-details-marker{display:none}
-.live-preparation>summary>span:nth-child(2){display:grid;gap:2px;flex:1}
-.live-preparation>summary strong{font:900 25px/.95 'Barlow Condensed',sans-serif}
-.live-preparation>summary small{color:#646b82;font-size:12px;font-weight:650}
-.live-preparation>summary>b{font-size:21px;transition:transform .2s}
-.live-preparation:not([open])>summary>b{transform:rotate(180deg)}
-.live-section-icon{display:grid;place-items:center;flex:none;width:30px;height:30px;border-radius:9px;background:#15161c;color:#fff;font-size:18px}
-.live-preparation-body{padding:0 20px 20px}
-.live-preparation-note{margin:0 0 11px;color:#5d6475;font-size:12px;font-weight:750}
-.live-section .live-team-picker{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin:0}
-.live-section .live-team-picker>label,.live-section .keeper-picks label{display:grid;gap:6px;color:#40475c;font-size:12px;font-weight:850}
-.live-section .live-team-picker select,.live-section .live-team-picker input,.live-section .keeper-picks select{height:42px;width:100%;border:1px solid #cdd1dc;border-radius:9px;background:#fff;color:#171820;font-weight:800;box-shadow:none}
-.live-section .loan-player-controls{margin-top:12px;background:#f0f1f5;border-color:#d7d9e1}
-.live-section .loan-player-controls label{color:#40475c}
-.live-section .loan-player-controls select{background:#fff;color:#171820;border-color:#cdd1dc}
-.live-section .match-lineup-preview{margin-top:14px;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
-.live-section .match-lineup-preview>.match-preview-team{min-height:138px;padding:15px 18px;border-radius:9px;box-shadow:inset 0 0 0 1px #ffffff22}
-.live-section .match-lineup-preview>.match-preview-team strong{display:block;font:900 21px/1 'Barlow Condensed',sans-serif}
-.live-section .match-lineup-preview>.match-preview-team ul{margin:9px 0 0;padding-left:20px;font-size:12px;font-weight:700}
-.live-section .match-lineup-preview>.match-preview-team li{padding:2px 0}
-.live-section .lineup-adjustments{margin:12px 0 0;padding:0;border-color:#cdd1dc;background:#fff;color:#20212a}
-.live-section .lineup-adjustments>summary{padding:12px 15px;color:#e4a900;font-size:13px}
-.live-section .lineup-adjustments>.help-text,.live-section .lineup-adjust-grid,.live-section .lineup-adjustments .reserve-controls,.live-section .lineup-adjustments .absent-players-list{margin-left:14px;margin-right:14px}
-.live-section .lineup-adjustments>.help-text{color:#5d6475}
-.live-section .lineup-adjustments .lineup-team-card{background:#f8f9fb;color:#20212a;border-color:#d6d9e1}
-.live-section .lineup-adjustments .lineup-team-card>header{border-color:#dee1e7}
-.live-section .lineup-adjustments .lineup-team-card li{border-color:#e2e4e9}
-.live-section .lineup-adjustments .lineup-transfer select{background:#fff;color:#20212a;border-color:#cdd1dc}
-.live-section .keeper-picks{margin:13px 0}
-.live-section .keeper-picks select{margin-top:0}
-.button-prepared{width:100%;min-height:52px;border:0;border-radius:9px;background:#07893f;color:#fff;font-size:16px;font-weight:900;box-shadow:0 6px 18px #07893f30}
-.button-prepared:not(:disabled):hover,.button-prepared.is-confirmed{background:#057637}
-.button-prepared:disabled{opacity:.55}
-.begin-game-button{display:flex!important;align-items:center;justify-content:center;gap:15px;min-width:min(440px,100%);margin:16px auto 10px;padding:13px 26px;border:1px solid #f7c400;border-radius:12px;background:linear-gradient(100deg,#ffdb00,#ffbf00);color:#14120a;box-shadow:0 12px 24px #0008;font-weight:900}
-.begin-game-button>span:first-child{font-size:31px;line-height:1}
-.begin-game-button>span:last-child{display:grid;text-align:left}
-.begin-game-button strong{font:900 28px/.9 'Barlow Condensed',sans-serif;letter-spacing:.4px}
-.begin-game-button small{font-size:11px;font-weight:750}
-.begin-game-button:disabled{filter:grayscale(.7);opacity:.5}
-.live-match-stage{position:relative;display:grid;gap:12px;margin-top:4px;padding:18px;border:2px solid #efc900;border-radius:16px;background:radial-gradient(ellipse at 50% 5%,#25211a,#070707 72%);box-shadow:inset 0 0 50px #0009}
-.live-match-stage .scoreboard{display:grid;grid-template-columns:minmax(0,1fr) auto minmax(0,1fr);gap:16px;align-items:center;margin:0;padding:0;background:none;border:0}
-.live-match-stage .scoreboard>div{display:grid!important;grid-template-columns:1fr auto!important;grid-template-areas:"team score" "scorers scorers"!important;align-items:center;gap:3px 12px;padding:14px 18px;border-radius:12px;min-height:90px;background:var(--home-color,#f28c28);color:var(--home-ink,#14120a);text-align:left!important}
-.live-match-stage .scoreboard>div:nth-of-type(2){grid-template-columns:auto 1fr!important;grid-template-areas:"score team" "scorers scorers"!important;background:var(--away-color,#1554c0);color:var(--away-ink,#fff);text-align:right!important}
-.live-match-stage .scoreboard small{grid-area:team;color:currentColor;font-size:16px;font-weight:900}
-.live-match-stage .scoreboard strong{grid-area:score;display:grid;place-items:center;min-width:92px;min-height:70px;border-radius:10px;background:#fff;color:#101114;font-size:clamp(50px,7vw,72px);text-shadow:none}
-.live-match-stage .scoreboard>span{font-size:42px;color:#fff}
-.live-match-stage .score-goal-list{grid-area:scorers;max-width:none;margin:0;color:currentColor}
-.live-match-stage .score-goal-item,.live-match-stage .score-goal-item time{color:currentColor}
-.match-timer-card{width:min(350px,100%);margin:0 auto;position:relative;z-index:1;display:grid;justify-items:center;padding:10px 18px 13px;border:2px solid #efcc00;border-radius:15px;background:#0c0c0e;color:#fff;box-shadow:0 8px 22px #0008}
-.match-timer-card>span{font-size:25px;color:#ffdf00;line-height:1}
-.live-section .timer-display{margin:0;color:#ffdc00;font-size:clamp(66px,10vw,96px);line-height:.9;text-shadow:none}
-.live-section .timer-status{margin-top:6px;min-height:0;color:#fff;text-transform:uppercase;font-size:10px;font-weight:900;letter-spacing:.05em}
-.match-timer-card .help-text{margin:5px 0 0;color:#e4cc4a;font-size:10px;font-weight:800}
-.live-action-layout{display:grid;grid-template-columns:minmax(280px,.92fr) minmax(0,1.3fr);gap:14px;align-items:stretch;margin-top:14px}
-.match-action-stack{display:grid;gap:10px}
-.match-action-stack .score-controls,.match-action-stack .timer-controls,.finish-controls{display:grid;margin:0}
-.button-goal,.button-pause,.button-finish{display:flex;align-items:center;gap:15px;min-height:75px;padding:13px 18px;border:0;border-radius:11px;text-align:left}
-.button-goal>span:first-child,.button-pause>span:first-child,.button-finish>span:first-child{display:grid;place-items:center;flex:none;width:44px;height:44px;border-radius:50%;background:#111;color:#fff;font-size:24px}
-.button-goal>span:last-child,.button-pause>span:last-child,.button-finish>span:last-child{display:grid;gap:3px}
-.button-goal strong,.button-pause strong,.button-finish strong{font:900 22px/.9 'Barlow Condensed',sans-serif}
-.button-goal small,.button-pause small,.button-finish small{font-size:11px;font-weight:650}
-.button-goal{background:linear-gradient(100deg,#11984a,#057436);color:#fff}
-.button-pause{background:#f4f4f6;color:#15151b}
-.button-finish{background:linear-gradient(100deg,#fa3b4d,#df1531);color:#fff}
-.button-finish>span:first-child{background:#201014}
-.finish-controls{gap:8px}
-.finish-controls label{display:grid;gap:5px;color:#fff;font-size:11px;font-weight:800}
-.finish-controls select{padding:9px;border:1px solid #555;border-radius:8px;background:#151515;color:#fff}
-.incident-panel{display:grid;align-content:start;gap:12px;padding:16px;border:2px solid #e2c400;border-radius:12px;background:#f7f8fb;color:#181a24;box-shadow:0 8px 22px #0005}
-.incident-panel-heading{display:flex;align-items:center;gap:11px}
-.incident-panel-heading .live-section-icon{background:#171820}
-.incident-panel-heading strong{display:block;font:900 19px/1 'Barlow Condensed',sans-serif}
-.incident-panel-heading small{display:block;margin-top:3px;color:#697087;font-size:10px;font-weight:650}
-.incident-panel .fields{grid-template-columns:1fr 1fr 1fr;gap:8px;margin:0}
-.incident-panel label{display:grid;gap:5px;color:#454b5c;font-size:10px;font-weight:800}
-.incident-panel input,.incident-panel select{min-width:0;padding:9px;border:1px solid #cdd1dc;border-radius:8px;background:#fff;color:#171820}
-.button-incident{justify-self:end;border:0;border-radius:8px;background:#ffc400;color:#14120a;font-size:11px;font-weight:900}
-.incident-panel .incident-list{min-height:104px;margin:0;border-top:1px solid #dfe2e9;padding-top:10px}
-.incident-panel .empty-state{margin:auto;color:#747b91}
-.live-rules-strip{display:flex;flex-wrap:wrap;align-items:stretch;gap:0;margin:14px 0 0;padding:10px 12px;border:2px solid #e3c900;border-radius:12px;background:#fff;color:#171820}
-.live-rules-strip strong{display:flex;align-items:center;padding:5px 12px 5px 0;font:900 15px/1 'Barlow Condensed',sans-serif}
-.live-rules-strip span{display:flex;align-items:center;max-width:170px;padding:5px 12px;border-left:1px solid #dfe1e7;font-size:10px;font-weight:700}
-@media(max-width:760px){
-  body.live-view-active .page-shell{padding:12px}
-  .live-preparation>summary{padding:14px}
-  .live-preparation-body{padding:0 14px 14px}
-  .live-section .live-team-picker,.live-section .match-lineup-preview,.live-action-layout{grid-template-columns:1fr}
-  .live-section .match-lineup-preview>.match-preview-team{min-height:0}
-  .live-match-stage{padding:10px}
-  .live-match-stage .scoreboard{gap:7px}
-  .live-match-stage .scoreboard>div{grid-template-columns:1fr!important;grid-template-areas:"team" "score" "scorers"!important;justify-items:center;padding:10px 8px;text-align:center!important}
-  .live-match-stage .scoreboard>div:nth-of-type(2){grid-template-areas:"team" "score" "scorers"!important}
-  .live-match-stage .scoreboard small{font-size:12px}
-  .live-match-stage .scoreboard strong{min-width:68px;min-height:58px;font-size:50px}
-  .live-match-stage .scoreboard>span{font-size:28px}
-  .live-match-stage .score-goal-list,.live-match-stage .score-goal-item{justify-content:center!important;text-align:center}
-  .match-timer-card{margin:0 auto}
-  .live-action-layout{margin-top:14px}
-  .incident-panel .fields{grid-template-columns:1fr}
-  .button-incident{justify-self:stretch}
-  .live-rules-strip{display:grid;grid-template-columns:1fr}
-  .live-rules-strip span{max-width:none;border-left:0;border-top:1px solid #dfe1e7}
+/* ===== LIGA SKALAMA · redesign visual da tela "Jogos ao vivo" (somente layout) ===== */
+body .live-section [hidden]{display:none!important}
+body .live-section :focus-visible{outline:3px solid #6f8fe8;outline-offset:2px}
+body .live-card{max-width:1080px;margin:0 auto;padding:18px;display:grid;gap:16px;grid-template-columns:minmax(0,1fr);align-items:start}
+body .live-card>.section-heading{margin:0;order:-5}
+body .live-card>.section-heading h2{font:800 clamp(28px,6vw,40px)/1 'Barlow Condensed',sans-serif}
+@media(min-width:620px){body .live-card{padding:26px}}
+@media(min-width:900px){
+  body .live-card{grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);column-gap:22px}
+  body .live-card>.section-heading,body .live-setup,body .live-card>.timer-rule{grid-column:1/-1}
+  body .live-main{grid-column:1;grid-row:span 2}
+  body .live-subs,body .live-incidents{grid-column:2}
 }
+/* Preparar partida */
+body .live-setup{border:1px solid var(--line);border-radius:16px;background:var(--panel);padding:0 16px}
+body .live-setup>summary{min-height:56px;display:flex;align-items:center;font-size:16px;font-weight:800;cursor:pointer;list-style:none}
+body .live-setup>summary::-webkit-details-marker{display:none}
+body .live-setup>summary::after{content:"▾";margin-left:auto;font-size:18px}
+body .live-setup[open]>summary::after{transform:rotate(180deg)}
+body .live-setup[open]>summary{border-bottom:1px solid var(--line);margin-bottom:16px}
+body .live-setup>:not(summary){margin-bottom:16px}
+body .live-section .live-team-picker{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin:0 0 16px;align-items:start}
+body .live-section .live-team-picker>label{grid-template-rows:auto auto}
+body .live-section .live-team-picker>#nextMatchPreview{margin:0;padding:11px 14px;border-left:5px solid var(--yellow);border-radius:10px;background:var(--panel2);color:var(--ink);font-size:15px;font-weight:700}
+@media(max-width:619px){body .live-section .live-team-picker,body .live-section .loan-player-controls,body .live-section .keeper-picks{grid-template-columns:minmax(0,1fr)}}
+/* Campos e botões grandes (16px evita zoom no iPhone) */
+body .live-section label,body .action-dialog label{font-size:13px;font-weight:700;color:var(--ink)}
+body .live-section .live-team-picker select,body .live-section .live-team-picker input,body .live-section .keeper-picks select,
+body .live-section .live-incidents select,body .live-section .live-subs select,body .live-section .live-incidents input,body .live-section .live-finish select,body .action-dialog select{height:50px;font-size:16px;padding:0 14px;border-radius:12px;border:1px solid var(--line);background:var(--panel2);color:var(--ink)}
+body .live-section .button,body .action-dialog .button{min-height:50px;font-size:14px;border-radius:12px;padding:0 20px}
+body .live-section .match-lineup-preview strong{font-size:15px}
+body .live-section .match-lineup-preview ul,body .live-section .lineup-team-card li{font-size:13px}
+body .live-section .lineup-adjustments>summary{font-size:14px;min-height:44px;display:flex;align-items:center}
+body .live-section .lineup-remove-player{font-size:12px;min-height:36px}
+body .live-section .help-text{font-size:12px}
+/* Placar e cronômetro */
+body .live-section .scoreboard{display:grid;grid-template-columns:minmax(0,1fr) auto minmax(0,1fr);gap:6px;align-items:center;margin:0;padding:18px 8px;border:1px solid var(--yellow);border-radius:18px;background:linear-gradient(180deg,rgba(255,196,0,.14),transparent)}
+body .live-section .scoreboard>div,body .live-section .scoreboard>div:first-of-type,body .live-section .scoreboard>div:nth-of-type(2){display:grid;align-items:center;gap:8px;min-width:0}
+body .live-section .scoreboard>div:first-of-type{grid-template-columns:minmax(0,1fr) auto;grid-template-areas:"team team" "scorers score";text-align:right}
+body .live-section .scoreboard>div:nth-of-type(2){grid-template-columns:auto minmax(0,1fr);grid-template-areas:"team team" "score scorers";text-align:left}
+body .live-section .scoreboard>div>small{grid-area:team;text-align:center;font:800 15px/1.2 'DM Sans',sans-serif;color:var(--ink);overflow-wrap:anywhere}
+body .live-section .scoreboard>div>strong{grid-area:score;font:900 clamp(56px,16vw,104px)/1 'Barlow Condensed',sans-serif;color:var(--ink);min-width:1.5ch;padding:0 .14em;border-radius:16px;background:var(--panel2);border-bottom:6px solid var(--yellow);text-align:center}
+body .live-section .scoreboard>div .score-goal-list{grid-area:scorers;max-width:none;margin:0;gap:3px;align-content:center}
+body .live-section .scoreboard>div:first-of-type .score-goal-list{justify-self:end;justify-content:end;text-align:right}
+body .live-section .scoreboard>div:first-of-type .score-goal-item{justify-content:flex-end}
+body .live-section .scoreboard>div:nth-of-type(2) .score-goal-list{justify-self:start;justify-content:start;text-align:left}
+body .live-section .scoreboard>div:nth-of-type(2) .score-goal-item{justify-content:flex-start}
+body .live-section .scoreboard .score-goal-item{font-size:12px;gap:4px}
+body .live-section .scoreboard>span{align-self:center;font:900 clamp(44px,11vw,72px)/1 'Barlow Condensed',sans-serif;color:var(--ink)}
+body .live-section .timer-display{font-size:clamp(76px,26vw,140px);line-height:1;margin:0;color:var(--ink);text-shadow:none}
+body .live-section .timer-status{font-size:14px;font-weight:700;color:var(--muted);min-height:20px}
+body .live-section .timer-controls{display:grid;grid-template-columns:minmax(0,1fr);width:100%;max-width:460px;margin:0 auto}
+body .live-section #pauseTimer{min-height:58px;font-size:17px}
+body .live-section #pauseTimer:not(:disabled){background:var(--yellow);border-color:var(--yellow);color:#15130a}
+/* Botão Começar jogo, controles e encerrar (ordem definida pelo organizador) */
+body .live-main{display:grid;gap:16px;align-content:start}
+body .live-section #beginGame{width:100%;min-height:58px;font-size:17px}
+body .live-section #preparedBtn{grid-column:1/-1;justify-self:center;width:100%;max-width:460px;min-height:58px;font-size:17px}
+body .live-section #preparedBtn.is-on::before{content:"✓ "}
+body .live-section #preparedBtn.is-on{box-shadow:0 0 0 3px rgba(22,128,60,.35)}
+body .live-clock{display:grid;gap:6px;text-align:center}
+body .live-row{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:10px;align-items:start}
+body .live-row>.live-goal[hidden]+.live-pause{grid-column:1/-1}
+body .live-goal{display:grid}
+body .live-section #openGoalDialog{width:100%;min-height:58px;font-size:17px}
+body .live-pause{display:grid;gap:6px}
+body .live-section .live-pause .timer-controls{max-width:none;margin:0}
+body .live-section #pauseTimer{width:100%;white-space:normal;line-height:1.2}
+body .live-pause>.help-text{text-align:center;margin:0}
+body .live-finish .fields.three{display:grid;grid-template-columns:minmax(0,1fr);gap:10px}
+body .live-finish #finishGame{width:100%;min-height:58px}
+body .live-finish #tieBreakerLabel{display:grid;gap:6px}
+body .live-finish #tieBreakerLabel.hidden{display:none!important}
+/* Ocorrências */
+body .live-incidents{align-self:start}
+body .live-incidents .incident-heading{margin:0 0 14px}
+body .live-incidents h3{font:800 24px/1.1 'Barlow Condensed',sans-serif}
+body .live-incidents .fields.three{grid-template-columns:minmax(0,1fr);margin-bottom:12px}
+@media(min-width:520px){body .live-incidents .fields.three{grid-template-columns:1fr 1fr}body .live-incidents .fields.three label:last-child{grid-column:1/-1}}
+body .live-incidents #addIncident{width:100%}
+body .live-section .incident-row{font-size:14px}
+body .live-section .timer-rule{font-size:13px;padding:12px}
+/* Substituições e titulares */
+body .live-subs{align-self:start}
+body .live-subs .incident-heading{margin:0 0 14px}
+body .live-subs h3{font:800 24px/1.1 'Barlow Condensed',sans-serif}
+body .live-subs .fields.three{display:grid;grid-template-columns:minmax(0,1fr);gap:12px;margin-bottom:12px}
+@media(min-width:520px){body .live-subs .fields.three{grid-template-columns:repeat(3,minmax(0,1fr))}}
+body .live-subs .help-text{margin:0 0 12px}
+body .live-subs #addSub{width:100%}
+body .live-section #onCourtLabel input{height:50px;font-size:16px;padding:0 14px;border-radius:12px;border:1px solid var(--line);background:var(--panel2);color:var(--ink)}
+body .live-section .starter-picks{grid-column:1/-1;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+@media(max-width:619px){body .live-section .starter-picks{grid-template-columns:minmax(0,1fr)}}
+body .live-section .starter-team{margin:0;padding:12px;border:1px solid var(--line);border-radius:14px;display:grid;gap:6px;min-width:0}
+body .live-section .starter-team legend{padding:0 6px;font-weight:800;font-size:14px}
+body .live-section .starter-option{display:flex;align-items:center;gap:10px;min-height:44px;font-size:15px;font-weight:600}
+body .live-section .starter-option input{width:22px;height:22px;flex:none}
+body .live-section .starter-team small{color:var(--muted);font-size:12px}
+/* Pênaltis e histórico */
+body .live-finish .fields.three>button{width:100%;min-height:58px}
+.shootout-dialog{width:min(94vw,520px);max-height:92vh;overflow:auto;padding:18px}
+.shootout-dialog .so-head{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:12px}
+.shootout-dialog .so-head strong{font:800 24px/1.1 'Barlow Condensed',sans-serif}
+.shootout-dialog .so-score{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;text-align:center;gap:8px;margin-bottom:12px;padding:12px;border:1px solid var(--yellow);border-radius:16px}
+.shootout-dialog .so-score small{display:block;font-weight:800;font-size:14px}
+.shootout-dialog .so-score b{font:900 clamp(56px,18vw,88px)/1 'Barlow Condensed',sans-serif}
+.shootout-dialog .so-score span{font:900 44px 'Barlow Condensed',sans-serif}
+.shootout-dialog label{display:grid;gap:6px;font-size:13px;font-weight:700;margin-bottom:10px}
+.shootout-dialog input,.shootout-dialog select{height:50px;font-size:16px;padding:0 14px;border-radius:12px;border:1px solid var(--line);background:var(--panel2);color:var(--ink)}
+.shootout-dialog .so-actions{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.shootout-dialog .so-actions .button{min-height:60px;font-size:18px}
+.shootout-dialog .so-log{list-style:none;margin:14px 0;padding:0;display:grid;gap:6px;max-height:210px;overflow:auto}
+.shootout-dialog .so-log li{display:flex;justify-content:space-between;gap:10px;padding:8px 12px;border:1px solid var(--line);border-radius:10px;font-size:14px}
+.shootout-dialog .so-foot{display:grid;gap:10px}
+@media(min-width:480px){.shootout-dialog .so-foot{grid-template-columns:1fr 1.4fr}}
+.history-subhead{margin:14px 0 6px;font-weight:800;color:var(--gold,var(--yellow))}
+.history-shootout{margin:4px 0;font-weight:700}
+/* Destaques da temporada: nomes em amarelo e estatísticas em branco */
+body .season-highlight-card{background:linear-gradient(145deg,#24231c,#171717);border-color:#514611}
+body .season-highlight-card .season-kicker{color:#ffc400}
+body .season-highlight-card strong{color:#ffc400}
+body .season-highlight-card small{color:#fff}
